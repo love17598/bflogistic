@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /thank-you.html
+Disallow: /_build/
+
+Sitemap: https://bflogistic.ca/sitemap.xml
