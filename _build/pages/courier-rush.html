@@ -1,0 +1,72 @@
+<section class="page-hero">
+  <div class="container">
+    <ol class="breadcrumb"><li><a href="index.html">Home</a></li><li><a href="courier.html">Courier</a></li><li>Rush</li></ol>
+    <span class="eyebrow eyebrow--yellow">Service level 2 of 3</span>
+    <h1 class="rule">Rush Courier &mdash; Three Hours, Door to Door</h1>
+    <p class="lead">Three hours from pickup to delivery, anywhere in the GTA. This is what runs after the 11:30&nbsp;AM Same Day cutoff has passed, and what you book when the afternoon has gone sideways. Rates start at $22.</p>
+    <div class="cutoff" data-cutoff-clock role="status" style="margin-top:1.5rem"></div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div style="display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:3rem" class="hub-grid">
+      <div>
+        <h2>A three-hour clock, not a three-hour estimate</h2>
+        <p>Rush is measured from the moment we collect. Three hours later it is delivered. Because the window is fixed rather than routed around other work, a Rush job is not consolidated with a driver's existing run &mdash; it gets priority on the schedule.</p>
+        <p>Most Rush bookings are not planned. Something did not ship when it should have, a customer moved a deadline, or a part turned out to be wrong. That is the job this tier does: it absorbs the afternoon that went wrong without anybody having to drive across the city themselves.</p>
+
+        <h3 style="margin-top:2.25rem">When Rush pricing applies</h3>
+        <p>Two ways you end up on Rush rates:</p>
+        <ul>
+          <li>You <b>choose</b> it because three hours is the window you need</li>
+          <li>You request a job <b>after 11:30&nbsp;AM</b>, at which point Same Day is no longer deliverable and Rush becomes the earliest honest option</li>
+        </ul>
+        <p>The second case is worth being blunt about. Plenty of couriers will take a Same Day booking at 2&nbsp;PM and then miss it. We would rather quote you the tier we can actually deliver.</p>
+
+        <h3 style="margin-top:2.25rem">Rush pricing</h3>
+        <p>From $22 in Zone&nbsp;1 to $56 in Zone&nbsp;10. The surcharges are identical to Same Day: $0.15 per pound over 30&nbsp;lbs, $15 if a van is needed, then 13% HST.</p>
+
+        <div class="card" style="margin-top:1.5rem;background:var(--mist)">
+          <h4 style="font-family:var(--font-display)">Worked example &mdash; Brampton to Toronto</h4>
+          <div class="calc-line"><span>Base rate &mdash; Zone 2, Rush</span><span class="num">$32.00</span></div>
+          <div class="calc-line is-muted"><span>Weight &mdash; 20 lbs, under the threshold</span><span class="num">$0.00</span></div>
+          <div class="calc-line is-muted"><span>Van charge &mdash; not required</span><span class="num">$0.00</span></div>
+          <div class="calc-line is-sub"><span>Subtotal</span><span class="num">$32.00</span></div>
+          <div class="calc-line"><span>HST at 13%</span><span class="num">$4.16</span></div>
+          <div class="calc-line is-total"><span>Total</span><span class="num">$36.16</span></div>
+        </div>
+
+        <div class="callout" style="margin-top:1.75rem">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 8h.01"/></svg>
+          <p><b>Rush outside the GTA is quoted by phone.</b> Our published out-of-town rates are Same Day only. A three-hour commitment to Barrie or Kitchener depends on the time of day and where our vehicles already are, so we price those individually rather than publishing a number we might not be able to honour.</p>
+        </div>
+      </div>
+
+      <div>
+        <div data-calculator data-from="Brampton" data-title="Price a Rush job"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section--mist">
+  <div class="container">
+    <div class="section-head">
+      <h2 class="rule">Rush rates by zone</h2>
+      <p>The middle column. To or from Zone&nbsp;1, excluding HST.</p>
+    </div>
+    {{ZONE_TABLE}}
+  </div>
+</section>
+
+<section class="cta-band">
+  <div class="container">
+    <h2>Need it in three hours?</h2>
+    <p>Price it below, or call and we will have a driver assigned while you are still on the phone.</p>
+    <div class="btn-row">
+      <a class="btn btn-dark btn-lg" href="courier-book.html">Book a Rush pickup</a>
+      <a class="btn btn-outline btn-lg" href="tel:+12894992838" style="border-color:rgba(35,35,35,.25)">Call (289) 499-2838</a>
+    </div>
+  </div>
+</section>

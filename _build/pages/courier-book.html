@@ -1,0 +1,286 @@
+<section class="page-hero">
+  <div class="container">
+    <ol class="breadcrumb"><li><a href="index.html">Home</a></li><li><a href="courier.html">Courier</a></li><li>Book a pickup</li></ol>
+    <span class="eyebrow eyebrow--yellow">Pickup request</span>
+    <h1 class="rule">Book a Pickup</h1>
+    <p class="lead">Three short steps. You will see the price as you go, and a member of our team will call you back within thirty minutes during business hours to confirm.</p>
+    <div class="cutoff" data-cutoff-clock role="status" style="margin-top:1.5rem"></div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container container--narrow">
+
+    <div class="demo-note">
+      <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0Z"/><path d="M12 9v4M12 17h.01"/></svg>
+      <div><b>This form is not connected to a server yet.</b> On this static build nothing is transmitted when you submit &mdash; you will be offered an email link instead. To book right now, call <a href="tel:+12894992838"><b>(289) 499-2838</b></a>.</div>
+    </div>
+
+    <div class="callout" data-prefill-note hidden style="margin-bottom:1.75rem"></div>
+
+    <form id="bookForm" data-form="pickup" data-ref-prefix="PR" data-subject="Pickup request" novalidate>
+
+      <ol class="steps-bar">
+        <li class="is-active">1. Service &amp; price</li>
+        <li>2. Pickup details</li>
+        <li>3. Delivery &amp; confirm</li>
+      </ol>
+
+      <!-- ===== STEP 1 ===== -->
+      <div class="form-step is-active">
+        <fieldset class="fieldset">
+          <legend>Service level</legend>
+          <div class="cutoff-note" data-service-note style="margin-bottom:1rem"></div>
+          <div class="calc-services">
+            <label class="svc"><input type="radio" name="service_level" value="same_day" required><span class="svc-name">Same Day</span><span class="svc-time">Delivered by 5:00 PM</span></label>
+            <label class="svc"><input type="radio" name="service_level" value="rush" required><span class="svc-name">Rush</span><span class="svc-time">3-hour pickup &amp; delivery</span></label>
+            <label class="svc"><input type="radio" name="service_level" value="direct" required><span class="svc-name">Direct</span><span class="svc-time">90-minute pickup &amp; delivery</span></label>
+          </div>
+        </fieldset>
+
+        <fieldset class="fieldset">
+          <legend>Where and what</legend>
+          <div class="field-row">
+            <div class="field">
+              <label for="bkFrom">Pickup city <span class="req" aria-hidden="true">*</span></label>
+              <select class="select" id="bkFrom" name="from" data-location-select required></select>
+              <span class="field-error"></span>
+            </div>
+            <div class="field">
+              <label for="bkTo">Delivery city <span class="req" aria-hidden="true">*</span></label>
+              <select class="select" id="bkTo" name="to" data-location-select required></select>
+              <span class="field-error"></span>
+            </div>
+          </div>
+          <div class="field-row--3" style="display:grid;gap:0 1rem">
+            <div class="field">
+              <label for="bkWeight">Total weight (lbs) <span class="req" aria-hidden="true">*</span></label>
+              <input class="input" type="number" id="bkWeight" name="weight_lbs" min="0.5" step="0.5" inputmode="decimal" placeholder="e.g. 45" required>
+              <span class="hint">Pounds, not kilograms.</span>
+              <span class="field-error"></span>
+            </div>
+            <div class="field">
+              <label for="bkPieces">Number of pieces <span class="req" aria-hidden="true">*</span></label>
+              <input class="input" type="number" id="bkPieces" name="pieces" min="1" step="1" value="1" inputmode="numeric" required>
+              <span class="field-error"></span>
+            </div>
+            <div class="field">
+              <label>Van required?</label>
+              <label class="check" style="margin:0;min-height:48px;align-items:center">
+                <input type="checkbox" name="van_required">
+                <span>Yes &mdash; add $15.00</span>
+              </label>
+            </div>
+          </div>
+        </fieldset>
+
+        <div class="card" style="background:var(--mist)">
+          <h2 style="font-size:1.05rem;margin-bottom:.75rem">Your estimated price</h2>
+          <div data-live-price aria-live="polite"></div>
+        </div>
+
+        <div class="form-nav">
+          <span></span>
+          <button class="btn btn-primary" type="button" data-step-next>Continue to pickup details</button>
+        </div>
+      </div>
+
+      <!-- ===== STEP 2 ===== -->
+      <div class="form-step">
+        <fieldset class="fieldset">
+          <legend>Who we are collecting from</legend>
+          <div class="field-row">
+            <div class="field">
+              <label for="bkPCo">Company name <span class="opt">(optional)</span></label>
+              <input class="input" type="text" id="bkPCo" name="pickup_company" autocomplete="organization">
+            </div>
+            <div class="field">
+              <label for="bkPName">Contact name <span class="req" aria-hidden="true">*</span></label>
+              <input class="input" type="text" id="bkPName" name="pickup_contact" autocomplete="name" required>
+              <span class="field-error"></span>
+            </div>
+          </div>
+          <div class="field-row">
+            <div class="field">
+              <label for="bkPPhone">Phone <span class="req" aria-hidden="true">*</span></label>
+              <input class="input" type="tel" id="bkPPhone" name="pickup_phone" data-validate="phone" autocomplete="tel" placeholder="(289) 499-2838" required>
+              <span class="field-error"></span>
+            </div>
+            <div class="field">
+              <label for="bkPEmail">Email <span class="req" aria-hidden="true">*</span></label>
+              <input class="input" type="email" id="bkPEmail" name="pickup_email" data-validate="email" autocomplete="email" required>
+              <span class="field-error"></span>
+            </div>
+          </div>
+        </fieldset>
+
+        <fieldset class="fieldset">
+          <legend>Pickup address</legend>
+          <div class="field-row">
+            <div class="field">
+              <label for="bkPAddr">Street address <span class="req" aria-hidden="true">*</span></label>
+              <input class="input" type="text" id="bkPAddr" name="pickup_address" autocomplete="address-line1" required>
+              <span class="field-error"></span>
+            </div>
+            <div class="field">
+              <label for="bkPUnit">Unit / suite <span class="opt">(optional)</span></label>
+              <input class="input" type="text" id="bkPUnit" name="pickup_unit" autocomplete="address-line2">
+            </div>
+          </div>
+          <div class="field-row">
+            <div class="field">
+              <label for="bkPCity">City <span class="req" aria-hidden="true">*</span></label>
+              <input class="input" type="text" id="bkPCity" name="pickup_city" autocomplete="address-level2" required>
+              <span class="field-error"></span>
+            </div>
+            <div class="field">
+              <label for="bkPPostal">Postal code <span class="req" aria-hidden="true">*</span></label>
+              <input class="input" type="text" id="bkPPostal" name="pickup_postal" data-validate="postal" autocomplete="postal-code" placeholder="L6W 1Y7" required>
+              <span class="field-error"></span>
+            </div>
+          </div>
+          <div class="field-row">
+            <div class="field">
+              <label for="bkPDate">Pickup date <span class="req" aria-hidden="true">*</span></label>
+              <input class="input" type="date" id="bkPDate" name="pickup_date" required>
+              <span class="field-error"></span>
+            </div>
+            <div class="field">
+              <label for="bkPTime">Ready time <span class="req" aria-hidden="true">*</span></label>
+              <input class="input" type="time" id="bkPTime" name="ready_time" required>
+              <span class="hint">When the shipment will be ready to collect.</span>
+              <span class="field-error"></span>
+            </div>
+          </div>
+          <div class="field">
+            <label for="bkPInstr">Pickup instructions <span class="opt">(optional)</span></label>
+            <textarea class="textarea" id="bkPInstr" name="pickup_instructions" placeholder="Buzzer code, dock number, which door to use…"></textarea>
+          </div>
+        </fieldset>
+
+        <div class="form-nav">
+          <button class="btn btn-outline" type="button" data-step-back>Back</button>
+          <button class="btn btn-primary" type="button" data-step-next>Continue to delivery</button>
+        </div>
+      </div>
+
+      <!-- ===== STEP 3 ===== -->
+      <div class="form-step">
+        <fieldset class="fieldset">
+          <legend>Where it is going</legend>
+          <div class="field-row">
+            <div class="field">
+              <label for="bkDCo">Company name <span class="opt">(optional)</span></label>
+              <input class="input" type="text" id="bkDCo" name="delivery_company">
+            </div>
+            <div class="field">
+              <label for="bkDName">Contact name <span class="req" aria-hidden="true">*</span></label>
+              <input class="input" type="text" id="bkDName" name="delivery_contact" required>
+              <span class="field-error"></span>
+            </div>
+          </div>
+          <div class="field-row">
+            <div class="field">
+              <label for="bkDPhone">Phone <span class="req" aria-hidden="true">*</span></label>
+              <input class="input" type="tel" id="bkDPhone" name="delivery_phone" data-validate="phone" required>
+              <span class="field-error"></span>
+            </div>
+            <div class="field">
+              <label for="bkDAddr">Street address <span class="req" aria-hidden="true">*</span></label>
+              <input class="input" type="text" id="bkDAddr" name="delivery_address" required>
+              <span class="field-error"></span>
+            </div>
+          </div>
+          <div class="field-row">
+            <div class="field">
+              <label for="bkDCity">City <span class="req" aria-hidden="true">*</span></label>
+              <input class="input" type="text" id="bkDCity" name="delivery_city" required>
+              <span class="field-error"></span>
+            </div>
+            <div class="field">
+              <label for="bkDPostal">Postal code <span class="req" aria-hidden="true">*</span></label>
+              <input class="input" type="text" id="bkDPostal" name="delivery_postal" data-validate="postal" placeholder="L3R 0B8" required>
+              <span class="field-error"></span>
+            </div>
+          </div>
+          <div class="field">
+            <label for="bkDInstr">Delivery instructions <span class="opt">(optional)</span></label>
+            <textarea class="textarea" id="bkDInstr" name="delivery_instructions" placeholder="Receiving hours, who to ask for, where to leave it…"></textarea>
+          </div>
+        </fieldset>
+
+        <fieldset class="fieldset">
+          <legend>About the shipment</legend>
+          <div class="field">
+            <label for="bkDesc">Package description <span class="req" aria-hidden="true">*</span></label>
+            <input class="input" type="text" id="bkDesc" name="description" placeholder="e.g. 2 boxes of machine parts" required>
+            <span class="field-error"></span>
+          </div>
+          <div class="field-row">
+            <div class="field">
+              <label for="bkValue">Declared value <span class="opt">(optional)</span></label>
+              <input class="input" type="number" id="bkValue" name="declared_value" min="0" step="1" inputmode="numeric" placeholder="CAD">
+            </div>
+            <div class="field">
+              <label for="bkPay">Payment method <span class="req" aria-hidden="true">*</span></label>
+              <select class="select" id="bkPay" name="payment_method" required>
+                <option value="">Choose…</option>
+                <option value="invoice">Invoice &mdash; Net 15 (account customers)</option>
+                <option value="card">Card on pickup</option>
+                <option value="account">Existing account</option>
+              </select>
+              <span class="field-error"></span>
+            </div>
+          </div>
+          <div class="field">
+            <label>Special handling <span class="opt">(optional)</span></label>
+            <div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 1rem">
+              <label class="check"><input type="checkbox" name="handling_fragile"><span>Fragile</span></label>
+              <label class="check"><input type="checkbox" name="handling_temperature"><span>Temperature-sensitive</span></label>
+              <label class="check"><input type="checkbox" name="handling_documents"><span>Documents only</span></label>
+              <label class="check"><input type="checkbox" name="handling_heavy"><span>Heavy</span></label>
+            </div>
+          </div>
+          <div class="field">
+            <label for="bkNotes">Anything else <span class="opt">(optional)</span></label>
+            <textarea class="textarea" id="bkNotes" name="notes"></textarea>
+          </div>
+        </fieldset>
+
+        <fieldset class="fieldset">
+          <legend>Confirm</legend>
+          <label class="check">
+            <input type="checkbox" name="agree_terms" required>
+            <span>I agree to the BF Logistics shipping terms and conditions. <span class="req" aria-hidden="true">*</span></span>
+          </label>
+          <label class="check">
+            <input type="checkbox" name="consent_contact" required>
+            <span>I consent to BF Logistics contacting me about this request by phone or email. <span class="req" aria-hidden="true">*</span></span>
+          </label>
+          <p class="tiny">A copy of our shipping terms is provided with your confirmation. We use your details only to arrange and invoice this delivery.</p>
+        </fieldset>
+
+        <div class="honeypot" aria-hidden="true">
+          <label>Leave this field empty<input type="text" name="company_website" tabindex="-1" autocomplete="off"></label>
+        </div>
+
+        <div class="form-nav">
+          <button class="btn btn-outline" type="button" data-step-back>Back</button>
+          <button class="btn btn-primary btn-lg" type="submit">Submit pickup request</button>
+        </div>
+        <div data-form-outcome></div>
+      </div>
+    </form>
+  </div>
+</section>
+
+<section class="section section--mist section--tight">
+  <div class="container container--narrow">
+    <h2 style="font-size:1.35rem;margin-bottom:1.25rem">What happens after you submit</h2>
+    <div class="grid grid-3">
+      <div><h3 style="font-size:1.05rem">We call you back</h3><p class="muted" style="font-size:.9375rem">Within thirty minutes during business hours, to confirm the window and the address details.</p></div>
+      <div><h3 style="font-size:1.05rem">You get a reference</h3><p class="muted" style="font-size:.9375rem">Every request gets a <b>PR-</b> number. Quote it on the phone and we will find your job instantly.</p></div>
+      <div><h3 style="font-size:1.05rem">Price confirmed at pickup</h3><p class="muted" style="font-size:.9375rem">The estimate is based on what you tell us. The final rate reflects actual weight at collection.</p></div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,196 @@
+<!-- ===== HERO WITH EMBEDDED CALCULATOR — §2.4 item 1 ===== -->
+<section class="page-hero">
+  <div class="container">
+    <ol class="breadcrumb"><li><a href="index.html">Home</a></li><li>Courier</li></ol>
+    <div style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.15fr);gap:2.5rem;align-items:center" class="hub-grid">
+      <div>
+        <span class="eyebrow eyebrow--yellow">Courier &middot; priced online</span>
+        <h1 class="rule">Same-Day Courier Service Across the GTA</h1>
+        <p class="lead">Three service levels, ten zones, and every rate published. Price your job below and book it in under three minutes &mdash; no account, no sales call first.</p>
+        <div class="btn-row" style="margin-top:1.5rem">
+          <a class="btn btn-dark" href="courier-book.html">Book a pickup</a>
+          <a class="btn btn-outline" href="tel:+12894992838">Call (289) 499-2838</a>
+        </div>
+      </div>
+      <div data-calculator data-from="Brampton" data-title="Price your delivery"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== THREE TIERS — §2.4 item 3 ===== -->
+<section class="section" id="services">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Service levels</span>
+      <h2 class="rule">Same Day, Rush and Direct</h2>
+      <p>The tier you can book depends on the clock. These cutoffs are real and we hold ourselves to them.</p>
+    </div>
+    <div class="grid grid-3">
+      <div class="tier is-featured">
+        <span class="tier-flag">Most booked</span>
+        <h3>Same Day</h3>
+        <p class="tier-time">Delivered by 5:00 PM</p>
+        <div class="tier-price"><span class="from">from</span><span class="amt num">$18</span><span class="unit">+ HST</span></div>
+        <div class="cutoff-note"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><span>Must be requested by <b>11:30&nbsp;AM</b></span></div>
+        <ul><li>Collected and delivered the same working day</li><li>All ten GTA zones</li><li>Flat zone rate, itemised</li></ul>
+        <a class="btn btn-primary btn-block" href="courier-same-day.html">Same Day details</a>
+      </div>
+      <div class="tier">
+        <h3>Rush</h3>
+        <p class="tier-time">3-hour pickup and delivery</p>
+        <div class="tier-price"><span class="from">from</span><span class="amt num">$22</span><span class="unit">+ HST</span></div>
+        <div class="cutoff-note"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><span>Requests after <b>11:30&nbsp;AM</b> are priced at Rush rates</span></div>
+        <ul><li>Three hours, door to door</li><li>The default once Same Day closes</li><li>Available across all ten zones</li></ul>
+        <a class="btn btn-outline btn-block" href="courier-rush.html">Rush details</a>
+      </div>
+      <div class="tier">
+        <h3>Direct</h3>
+        <p class="tier-time">90-minute pickup and delivery</p>
+        <div class="tier-price"><span class="from">from</span><span class="amt num">$28</span><span class="unit">+ HST</span></div>
+        <div class="cutoff-note"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><span>Requests after <b>2:30&nbsp;PM</b> are priced at Direct rates</span></div>
+        <ul><li>Straight from your door to theirs</li><li>No consolidation, no other stops</li><li>For deadlines that cannot slip</li></ul>
+        <a class="btn btn-outline btn-block" href="courier-direct.html">Direct details</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FULL RATE CHART, PUBLISHED — §2.4 item 4, §2.5 ===== -->
+<section class="section section--mist" id="rates">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Rates</span>
+      <h2 class="rule">The whole rate chart, in public</h2>
+      <p>Most GTA couriers hide this behind &ldquo;call us.&rdquo; Here it is. Rates apply to deliveries to or from Zone&nbsp;1 (Brampton / Mississauga) and exclude HST.</p>
+    </div>
+    {{ZONE_TABLE}}
+    <div class="btn-row" style="margin-top:1.5rem">
+      <a class="btn btn-primary" href="courier-pricing.html">Open the full calculator</a>
+      <a class="btn btn-outline" href="courier-zones.html">See the zones mapped</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SURCHARGES — §2.4 item 5 ===== -->
+<section class="section" id="surcharges">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Surcharges</span>
+      <h2 class="rule">Three additions, and that is the lot</h2>
+      <p>There is no fuel levy, no residential fee, no liftgate charge and no after-hours premium on our card. What you see below is everything.</p>
+    </div>
+    <div class="grid grid-3">
+      <div class="card">
+        <span class="icon-badge"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v6M7 21h10a2 2 0 0 0 2-2.2l-1.2-9A2 2 0 0 0 15.8 8H8.2a2 2 0 0 0-2 1.8L5 18.8A2 2 0 0 0 7 21Z"/></svg></span>
+        <h3>Weight &mdash; $0.15 / lb</h3>
+        <p class="muted" style="font-size:.9375rem">Applies only to weight <b>exceeding 30&nbsp;lbs</b>. A 29&nbsp;lb parcel carries nothing. A 45&nbsp;lb parcel is charged on 15&nbsp;lbs, so $2.25.</p>
+      </div>
+      <div class="card">
+        <span class="icon-badge"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 16V8h13v8ZM14 11h4l3 3v2h-7Z"/><circle cx="5.5" cy="17.5" r="2"/><circle cx="17.5" cy="17.5" r="2"/></svg></span>
+        <h3>Van charge &mdash; $15.00</h3>
+        <p class="muted" style="font-size:.9375rem">Applied when the job needs a van rather than a car &mdash; bulk, pallets, or anything that will not travel safely in a sedan.</p>
+      </div>
+      <div class="card">
+        <span class="icon-badge"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16v16H4z"/><path d="M8 12h8M12 8v8"/></svg></span>
+        <h3>HST &mdash; 13%</h3>
+        <p class="muted" style="font-size:.9375rem">Applied to the full subtotal. Every price we publish is shown excluding HST and then again with it added.</p>
+      </div>
+    </div>
+    <div class="callout" style="margin-top:1.75rem">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 8h.01"/></svg>
+      <p><b>Weight is in pounds, not kilograms.</b> Our rate card is imperial. The calculator has a kg toggle that converts for you, but the engine always prices in lbs so nothing gets lost in translation.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== OUT-OF-TOWN TEASER — §2.4 item 6 ===== -->
+<section class="section section--mist">
+  <div class="container">
+    <div style="display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:2.5rem;align-items:center" class="hub-grid">
+      <div>
+        <span class="eyebrow">Out of town</span>
+        <h2 class="rule">Sixty-plus destinations beyond the GTA</h2>
+        <p class="muted">From Bolton at $40 to Sudbury at $600, every out-of-town run has a flat published same-day rate. Rush and Direct outside the GTA are quoted per job &mdash; a three-hour window to Sarnia is a promise we will make on the phone, not on a form.</p>
+        <a class="btn btn-dark" href="courier-out-of-town.html" style="margin-top:1.25rem">Browse the full list</a>
+      </div>
+      <div class="card">
+        <div class="calc-line"><span>Bolton</span><span class="num">$40</span></div>
+        <div class="calc-line"><span>Caledon</span><span class="num">$50</span></div>
+        <div class="calc-line"><span>Hamilton</span><span class="num">$80</span></div>
+        <div class="calc-line"><span>Cambridge</span><span class="num">$95</span></div>
+        <div class="calc-line"><span>Barrie</span><span class="num">$110</span></div>
+        <div class="calc-line" style="border-bottom:0"><span>Peterborough</span><span class="num">$160</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== BUSINESS ACCOUNTS — §2.4 item 7 ===== -->
+<section class="section" id="accounts">
+  <div class="container container--narrow">
+    <div class="card card--pad-lg">
+      <span class="eyebrow">Business accounts</span>
+      <h2 class="rule">Net 15 terms for regular shippers</h2>
+      <p class="muted">If you are moving several jobs a week, an account removes the payment step entirely. You book, we deliver, and everything lands on one invoice due in fifteen days.</p>
+      <ul style="margin-top:1.25rem">
+        <li><b>Net 15 day terms</b> on approved accounts</li>
+        <li>One consolidated invoice rather than job-by-job payment</li>
+        <li>Named contacts on our side who know your addresses and your habits</li>
+        <li>Volume pricing reviewed once we can see your actual lane mix</li>
+      </ul>
+      <div class="btn-row" style="margin-top:1.5rem">
+        <a class="btn btn-primary" href="contact.html">Ask about an account</a>
+        <a class="btn btn-outline" href="tel:+12894992838">Call (289) 499-2838</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FAQ — §2.4 item 8 ===== -->
+<section class="section section--mist" id="faq">
+  <div class="container container--narrow">
+    <div class="section-head">
+      <span class="eyebrow">Courier FAQ</span>
+      <h2 class="rule">The questions we get most</h2>
+    </div>
+    <div class="accordion">
+      <details open>
+        <summary>What happens if I book after 11:30 AM?</summary>
+        <div class="acc-body"><p>Your job is priced at Rush rates and delivered inside three hours. After 2:30&nbsp;PM it moves to Direct, which is ninety minutes. The clock in the header always tells you which tier you are currently in, so there is never a surprise at checkout.</p></div>
+      </details>
+      <details>
+        <summary>How is the weight surcharge calculated?</summary>
+        <div class="acc-body"><p>Only the weight <em>above</em> 30&nbsp;lbs is charged, at $0.15 per pound. A 45&nbsp;lb shipment is billed on 15&nbsp;lbs, which is $2.25. Anything at or under 30&nbsp;lbs carries no weight surcharge at all.</p></div>
+      </details>
+      <details>
+        <summary>When does the $15 van charge apply?</summary>
+        <div class="acc-body"><p>When the job genuinely needs a van rather than a car &mdash; bulky items, pallets, multiple boxes, or anything that will not travel safely in a sedan. If you are unsure, tick the box for an accurate estimate and we will confirm on the call.</p></div>
+      </details>
+      <details>
+        <summary>What if neither end of my trip is in Zone 1?</summary>
+        <div class="acc-body"><p>Our rate card is built around Brampton and Mississauga. For a trip like Markham to Burlington, where neither end is Zone&nbsp;1, we apply the higher of the two zone rates plus a $10 inter-zone uplift. The calculator shows this as its own line so you can see exactly how the number was built.</p></div>
+      </details>
+      <details>
+        <summary>Do you deliver on weekends?</summary>
+        <div class="acc-body"><p>Our published hours are Monday to Friday, 10:00&nbsp;AM to 5:00&nbsp;PM. Weekend work is arranged case by case &mdash; call us and we will tell you honestly whether we can cover it.</p></div>
+      </details>
+      <details>
+        <summary>Can I track my delivery online?</summary>
+        <div class="acc-body"><p>Not yet. Online tracking is planned but not live, and we would rather say so than point you at a page that does not work. Instead, every request gets a reference number and a phone call from a real person to confirm. If you want an update mid-job, call us on <a href="tel:+12894992838">(289) 499-2838</a> and we will tell you where the driver is.</p></div>
+      </details>
+    </div>
+    <p style="margin-top:1.5rem"><a href="faq.html">Read the full FAQ &rarr;</a></p>
+  </div>
+</section>
+
+<!-- ===== BOOK CTA — §2.4 item 9 ===== -->
+<section class="cta-band">
+  <div class="container">
+    <h2>Ready when you are</h2>
+    <p>Fill in the pickup request and we will call you back within thirty minutes during business hours to confirm the details.</p>
+    <div class="btn-row">
+      <a class="btn btn-dark btn-lg" href="courier-book.html">Book a pickup</a>
+      <a class="btn btn-outline btn-lg" href="courier-pricing.html" style="border-color:rgba(35,35,35,.25)">Get a price first</a>
+    </div>
+  </div>
+</section>

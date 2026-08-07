@@ -1,0 +1,162 @@
+<section class="page-hero page-hero--steel">
+  <div class="container">
+    <ol class="breadcrumb"><li><a href="index.html">Home</a></li><li><a href="logistics.html">Logistics</a></li><li>Request a quote</li></ol>
+    <span class="eyebrow eyebrow--steel">Freight quote</span>
+    <h1 class="rule rule--steel">Request a Freight Quote</h1>
+    <p class="lead">Give us the shape of the load and we will price it properly. <b>We respond to all freight quotes within one business day.</b></p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container container--narrow">
+
+    <div class="demo-note">
+      <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0Z"/><path d="M12 9v4M12 17h.01"/></svg>
+      <div><b>This form is not connected to a server yet.</b> On this static build nothing is transmitted when you submit &mdash; you will be offered an email link instead. To get a quote moving now, call <a href="tel:+12894992838"><b>(289) 499-2838</b></a>.</div>
+    </div>
+
+    <form id="quoteForm" data-form="quote" data-ref-prefix="QR" data-subject="Freight quote request" novalidate>
+      <fieldset class="fieldset">
+        <legend>About you</legend>
+        <div class="field-row">
+          <div class="field">
+            <label for="qCompany">Company name <span class="req" aria-hidden="true">*</span></label>
+            <input class="input" type="text" id="qCompany" name="company" autocomplete="organization" required>
+            <span class="field-error"></span>
+          </div>
+          <div class="field">
+            <label for="qName">Your name <span class="req" aria-hidden="true">*</span></label>
+            <input class="input" type="text" id="qName" name="contact_name" autocomplete="name" required>
+            <span class="field-error"></span>
+          </div>
+        </div>
+        <div class="field-row">
+          <div class="field">
+            <label for="qPhone">Phone <span class="req" aria-hidden="true">*</span></label>
+            <input class="input" type="tel" id="qPhone" name="phone" data-validate="phone" autocomplete="tel" placeholder="(289) 499-2838" required>
+            <span class="field-error"></span>
+          </div>
+          <div class="field">
+            <label for="qEmail">Email <span class="req" aria-hidden="true">*</span></label>
+            <input class="input" type="email" id="qEmail" name="email" data-validate="email" autocomplete="email" required>
+            <span class="field-error"></span>
+          </div>
+        </div>
+      </fieldset>
+
+      <fieldset class="fieldset">
+        <legend>The lane</legend>
+        <div class="field-row">
+          <div class="field">
+            <label for="qOrigin">Origin city <span class="req" aria-hidden="true">*</span></label>
+            <input class="input" type="text" id="qOrigin" name="origin_city" placeholder="e.g. Brampton, ON" required>
+            <span class="field-error"></span>
+          </div>
+          <div class="field">
+            <label for="qOriginPostal">Origin postal code <span class="opt">(optional)</span></label>
+            <input class="input" type="text" id="qOriginPostal" name="origin_postal" data-validate="postal" placeholder="L6W 1Y7">
+            <span class="field-error"></span>
+          </div>
+        </div>
+        <div class="field-row">
+          <div class="field">
+            <label for="qDest">Destination city <span class="req" aria-hidden="true">*</span></label>
+            <input class="input" type="text" id="qDest" name="destination_city" required>
+            <span class="field-error"></span>
+          </div>
+          <div class="field">
+            <label for="qDestPostal">Destination postal code <span class="opt">(optional)</span></label>
+            <input class="input" type="text" id="qDestPostal" name="destination_postal" data-validate="postal">
+            <span class="field-error"></span>
+          </div>
+        </div>
+        <div class="field">
+          <label for="qFrequency">How often does this move? <span class="req" aria-hidden="true">*</span></label>
+          <select class="select" id="qFrequency" name="frequency" required>
+            <option value="">Choose…</option>
+            <option value="one-off">One-off shipment</option>
+            <option value="occasional">Occasional / as needed</option>
+            <option value="weekly">Weekly</option>
+            <option value="several-weekly">Several times a week</option>
+            <option value="daily">Daily</option>
+          </select>
+          <span class="field-error"></span>
+        </div>
+      </fieldset>
+
+      <fieldset class="fieldset">
+        <legend>The load</legend>
+        <div class="field">
+          <label for="qService">What do you need? <span class="req" aria-hidden="true">*</span></label>
+          <select class="select" id="qService" name="service_type" required>
+            <option value="">Choose…</option>
+            <option value="ltl">LTL freight &mdash; less than a full trailer</option>
+            <option value="ftl">FTL freight &mdash; full truckload</option>
+            <option value="warehousing">Warehousing / storage</option>
+            <option value="distribution">Distribution programme</option>
+            <option value="last-mile">Last-mile delivery</option>
+            <option value="dedicated">Dedicated fleet</option>
+            <option value="unsure">Not sure &mdash; help me work it out</option>
+          </select>
+          <span class="field-error"></span>
+        </div>
+        <div class="field-row--3" style="display:grid;gap:0 1rem">
+          <div class="field">
+            <label for="qWeight">Total weight (lbs) <span class="req" aria-hidden="true">*</span></label>
+            <input class="input" type="number" id="qWeight" name="weight_lbs" min="1" step="1" inputmode="numeric" required>
+            <span class="hint">Pounds, not kilograms.</span>
+            <span class="field-error"></span>
+          </div>
+          <div class="field">
+            <label for="qPallets">Pallets / pieces <span class="opt">(optional)</span></label>
+            <input class="input" type="number" id="qPallets" name="pallets" min="0" step="1" inputmode="numeric">
+          </div>
+          <div class="field">
+            <label for="qDims">Largest dimensions <span class="opt">(optional)</span></label>
+            <input class="input" type="text" id="qDims" name="dimensions" placeholder="48 × 40 × 60 in">
+          </div>
+        </div>
+        <div class="field">
+          <label>Handling requirements <span class="opt">(optional)</span></label>
+          <div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 1rem">
+            <label class="check"><input type="checkbox" name="needs_tailgate"><span>Tailgate / liftgate needed</span></label>
+            <label class="check"><input type="checkbox" name="needs_dock"><span>Dock at both ends</span></label>
+            <label class="check"><input type="checkbox" name="temperature_controlled"><span>Temperature controlled</span></label>
+            <label class="check"><input type="checkbox" name="fragile"><span>Fragile or high value</span></label>
+          </div>
+        </div>
+        <div class="field">
+          <label for="qDetails">Anything else we should know <span class="opt">(optional)</span></label>
+          <textarea class="textarea" id="qDetails" name="details" placeholder="Commodity, deadlines, receiving hours, current carrier…"></textarea>
+        </div>
+      </fieldset>
+
+      <fieldset class="fieldset">
+        <legend>Confirm</legend>
+        <label class="check">
+          <input type="checkbox" name="consent_contact" required>
+          <span>I consent to BF Logistics contacting me about this quote by phone or email. <span class="req" aria-hidden="true">*</span></span>
+        </label>
+        <p class="tiny">We use your details only to prepare and discuss this quote.</p>
+      </fieldset>
+
+      <div class="honeypot" aria-hidden="true">
+        <label>Leave this field empty<input type="text" name="company_website" tabindex="-1" autocomplete="off"></label>
+      </div>
+
+      <button class="btn btn-steel btn-lg btn-block" type="submit">Request my quote</button>
+      <div data-form-outcome></div>
+    </form>
+  </div>
+</section>
+
+<section class="section section--mist section--tight">
+  <div class="container container--narrow">
+    <h2 style="font-size:1.35rem;margin-bottom:1.25rem">What to expect</h2>
+    <div class="grid grid-3">
+      <div><h3 style="font-size:1.05rem">One business day</h3><p class="muted" style="font-size:.9375rem">That is the commitment. If we need more information first, you will hear from us inside that window anyway.</p></div>
+      <div><h3 style="font-size:1.05rem">A real number</h3><p class="muted" style="font-size:.9375rem">Not a range and not a placeholder. If we cannot price something honestly, we will say so.</p></div>
+      <div><h3 style="font-size:1.05rem">Same people</h3><p class="muted" style="font-size:.9375rem">Freight and courier run out of the same office on the same phone number. No handoffs.</p></div>
+    </div>
+  </div>
+</section>
