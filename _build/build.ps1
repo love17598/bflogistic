@@ -55,7 +55,7 @@ $logisticsSubnav = @'
 $pages = @(
   @{ f='index.html';                subnav='';
      t='BF Logistics | Same-Day Courier & Delivery in the GTA';
-     d='Same-day courier across 10 GTA zones. Book by 11:30 AM, delivered by 5 PM. Rates from $18. Instant online pricing. Call (289) 499-2838.' }
+     d='Same-day courier across 10 GTA zones. Book by 11:30 AM, delivered by 5 PM. Rates from $18. Instant online pricing. Call (905) 500-9443.' }
 
   @{ f='courier.html';              subnav='courier';
      t='Same-Day Courier Service GTA | BF Logistics';
@@ -83,7 +83,7 @@ $pages = @(
 
   @{ f='courier-out-of-town.html';  subnav='courier';
      t='Out-of-Town Same-Day Delivery from the GTA | BF Logistics';
-     d='Same-day delivery from the GTA to Barrie, Guelph, Hamilton, Kitchener, London and beyond. Flat published rates. Call (289) 499-2838.' }
+     d='Same-day delivery from the GTA to Barrie, Guelph, Hamilton, Kitchener, London and beyond. Flat published rates. Call (905) 500-9443.' }
 
   @{ f='courier-book.html';         subnav='courier';
      t='Book a Pickup | BF Logistics';
@@ -103,11 +103,11 @@ $pages = @(
 
   @{ f='faq.html';                  subnav='';
      t='Courier FAQ - Cutoffs, Rates & Coverage | BF Logistics';
-     d='Answers on same-day cutoffs, the weight surcharge, zone pricing, coverage and Net 15 accounts. If it is not here, call (289) 499-2838.' }
+     d='Answers on same-day cutoffs, the weight surcharge, zone pricing, coverage and Net 15 accounts. If it is not here, call (905) 500-9443.' }
 
   @{ f='contact.html';              subnav='';
      t='Contact BF Logistics | Brampton, Ontario';
-     d='Call (289) 499-2838 or email admin@bflogistic.ca. BF Logistics, 49 Hillcrest Ave, Brampton ON. Monday to Friday, 10:00 AM to 5:00 PM.' }
+     d='Call (905) 500-9443 or email admin@bflogistic.ca. BF Logistics, Suite 202-49 Hillcrest Ave, Brampton ON. Monday to Friday, 10:00 AM to 5:00 PM.' }
 
   @{ f='thank-you.html';            subnav='';
      t='Request Received | BF Logistics';

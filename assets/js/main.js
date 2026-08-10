@@ -19,8 +19,8 @@
   var DEMO_MODE = true;
 
   var CONTACT = {
-    phone: '(289) 499-2838',
-    phoneHref: 'tel:+12894992838',
+    phone: '(905) 500-9443',
+    phoneHref: 'tel:+19055009443',
     email: 'admin@bflogistic.ca'
   };
 
@@ -509,8 +509,8 @@
 
     var kind = node.getAttribute('data-validate');
     if (kind === 'email' && !PATTERNS.email.test(value)) { setError(node, 'Enter a valid email address.'); return false; }
-    if (kind === 'phone' && !PATTERNS.phone.test(value)) { setError(node, 'Enter a valid Canadian phone number, e.g. (289) 499-2838.'); return false; }
-    if (kind === 'postal' && !PATTERNS.postal.test(value)) { setError(node, 'Enter a valid postal code, e.g. L6W 1Y7.'); return false; }
+    if (kind === 'phone' && !PATTERNS.phone.test(value)) { setError(node, 'Enter a valid Canadian phone number, e.g. (905) 500-9443.'); return false; }
+    if (kind === 'postal' && !PATTERNS.postal.test(value)) { setError(node, 'Enter a valid postal code, e.g. L6W 4V4.'); return false; }
     if (node.type === 'date' && node.min && value < node.min) { setError(node, 'Pickup date cannot be in the past.'); return false; }
 
     clearError(node);
