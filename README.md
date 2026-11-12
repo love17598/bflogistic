@@ -1,5 +1,14 @@
 # BF Logistics — Website (static build)
 
+> **Pricing update — November 2026.** The site now uses **3 zones + distance**:
+> Zone 1 $19 · Zone 2 $22 · Zone 3 $32 (Same Day). Between two zones the higher rate applies;
+> inside one zone it is $19. Rush = base × 1.5, Direct = base × 1.7. After the first 50 km
+> add $1/km (not multiplied). Customers enter **postal codes**; the zone and distance are
+> worked out from `assets/js/postal-data.js` (postal-area centres, straight-line distance × 1.3
+> road factor). Towns outside the zones keep their out-of-town flat rate (Same Day only).
+> All numbers live in `SETTINGS` and `ZONES` at the top of `assets/js/rates.js`.
+> Sections below that mention 10 zones or the $10 uplift describe the earlier version.
+
 Built from **BF-Logistics-Website-Blueprint-v2.md**, Phase 1 core scope.
 
 **To view it:** double-click `index.html`. No server, no install, no build step — it opens

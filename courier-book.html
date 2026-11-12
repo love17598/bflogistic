@@ -62,14 +62,14 @@
             <h2>Pricing</h2>
             <ul>
               <li><a href="courier-pricing.html"><b>Price Calculator</b><span>Instant itemised quote</span></a></li>
-              <li><a href="courier-pricing.html#chart"><b>Zone Rate Chart</b><span>All 30 published rates</span></a></li>
+              <li><a href="courier-pricing.html#chart"><b>Zone Rate Chart</b><span>Every published rate</span></a></li>
               <li><a href="courier-out-of-town.html"><b>Out-of-Town</b><span>Flat rates beyond the GTA</span></a></li>
             </ul>
           </div>
           <div class="mega-col">
             <h2>Info</h2>
             <ul>
-              <li><a href="courier-zones.html"><b>The 10 Zones</b><span>Mapped and priced</span></a></li>
+              <li><a href="courier-zones.html"><b>The 3 Zones</b><span>Mapped and priced</span></a></li>
               <li><a href="faq.html"><b>Courier FAQ</b><span>Cutoffs, surcharges, terms</span></a></li>
             </ul>
             <a class="mega-cta" href="courier-book.html">Book a pickup &rarr;</a>
@@ -129,7 +129,7 @@
     <a href="courier-rush.html">Rush</a>
     <a href="courier-direct.html">Direct</a>
     <a href="courier-pricing.html">Rates &amp; calculator</a>
-    <a href="courier-zones.html">The 10 zones</a>
+    <a href="courier-zones.html">The 3 zones</a>
     <a href="courier-out-of-town.html">Out of town</a>
     <a href="courier-book.html">Book a pickup</a>
   </div>
@@ -179,13 +179,15 @@
           <legend>Where and what</legend>
           <div class="field-row">
             <div class="field">
-              <label for="bkFrom">Pickup city <span class="req" aria-hidden="true">*</span></label>
-              <select class="select" id="bkFrom" name="from" data-location-select required></select>
+              <label for="bkFrom">Pickup postal code <span class="req" aria-hidden="true">*</span></label>
+              <input class="input" type="text" id="bkFrom" name="from" data-place-input placeholder="e.g. L6W 4V4" required>
+              <span class="hint" data-place-hint></span>
               <span class="field-error"></span>
             </div>
             <div class="field">
-              <label for="bkTo">Delivery city <span class="req" aria-hidden="true">*</span></label>
-              <select class="select" id="bkTo" name="to" data-location-select required></select>
+              <label for="bkTo">Delivery postal code <span class="req" aria-hidden="true">*</span></label>
+              <input class="input" type="text" id="bkTo" name="to" data-place-input placeholder="e.g. L3R 0B8" required>
+              <span class="hint" data-place-hint></span>
               <span class="field-error"></span>
             </div>
           </div>
@@ -444,7 +446,7 @@
           <li><a href="courier-rush.html">Rush — 3 hours</a></li>
           <li><a href="courier-direct.html">Direct — 90 minutes</a></li>
           <li><a href="courier-pricing.html">Rates &amp; calculator</a></li>
-          <li><a href="courier-zones.html">The 10 GTA zones</a></li>
+          <li><a href="courier-zones.html">Our 3 delivery zones</a></li>
           <li><a href="courier-out-of-town.html">Out-of-town rates</a></li>
           <li><a href="courier-book.html">Book a pickup</a></li>
         </ul>
@@ -497,7 +499,7 @@
     <li><a href="courier-rush.html">Rush — 3 hours</a></li>
     <li><a href="courier-direct.html">Direct — 90 minutes</a></li>
     <li><a href="courier-pricing.html">Rates &amp; calculator</a></li>
-    <li><a href="courier-zones.html">The 10 GTA zones</a></li>
+    <li><a href="courier-zones.html">Our 3 delivery zones</a></li>
     <li><a href="courier-out-of-town.html">Out-of-town rates</a></li>
     <li><a href="courier-book.html">Book a pickup</a></li>
   </ul>
@@ -536,7 +538,7 @@
   "@id": "https://bflogistic.ca/#business",
   "name": "BF Logistics",
   "slogan": "Reliable Delivery",
-  "description": "Same-day courier and logistics across the Greater Toronto Area. 10 zones, transparent published rates, booked by 11:30 AM and delivered by 5:00 PM.",
+  "description": "Same-day courier and logistics across the Greater Toronto Area. Three delivery zones, transparent published rates, booked by 11:30 AM and delivered by 5:00 PM.",
   "url": "https://bflogistic.ca/",
   "logo": "https://bflogistic.ca/assets/img/logo.png",
   "image": "https://bflogistic.ca/assets/img/van.jpg",
@@ -564,15 +566,18 @@
     {"@type":"City","name":"Vaughan"},{"@type":"City","name":"Markham"},
     {"@type":"City","name":"Richmond Hill"},{"@type":"City","name":"Aurora"},
     {"@type":"City","name":"Newmarket"},{"@type":"City","name":"Oakville"},
-    {"@type":"City","name":"Georgetown"},{"@type":"City","name":"Burlington"},
-    {"@type":"City","name":"Milton"},{"@type":"City","name":"Pickering"},
-    {"@type":"City","name":"Ajax"},{"@type":"City","name":"Whitby"},
-    {"@type":"City","name":"Oshawa"}
+    {"@type":"City","name":"Georgetown"},{"@type":"City","name":"Milton"},
+    {"@type":"City","name":"Pickering"},{"@type":"City","name":"Ajax"},
+    {"@type":"City","name":"Whitby"},{"@type":"City","name":"Oshawa"},
+    {"@type":"City","name":"Guelph"},{"@type":"City","name":"Acton"},
+    {"@type":"City","name":"Hamilton"},{"@type":"City","name":"Kitchener"},
+    {"@type":"City","name":"Waterloo"},{"@type":"City","name":"Cambridge"}
   ]
 }
 </script>
 
-<script src="assets/js/rates.js?v=1.0.3"></script>
-<script src="assets/js/main.js?v=1.0.3"></script>
+<script src="assets/js/postal-data.js?v=1.1.0"></script>
+<script src="assets/js/rates.js?v=1.1.0"></script>
+<script src="assets/js/main.js?v=1.1.0"></script>
 </body>
 </html>

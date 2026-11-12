@@ -42,13 +42,15 @@
           <legend>Where and what</legend>
           <div class="field-row">
             <div class="field">
-              <label for="bkFrom">Pickup city <span class="req" aria-hidden="true">*</span></label>
-              <select class="select" id="bkFrom" name="from" data-location-select required></select>
+              <label for="bkFrom">Pickup postal code <span class="req" aria-hidden="true">*</span></label>
+              <input class="input" type="text" id="bkFrom" name="from" data-place-input placeholder="e.g. L6W 4V4" required>
+              <span class="hint" data-place-hint></span>
               <span class="field-error"></span>
             </div>
             <div class="field">
-              <label for="bkTo">Delivery city <span class="req" aria-hidden="true">*</span></label>
-              <select class="select" id="bkTo" name="to" data-location-select required></select>
+              <label for="bkTo">Delivery postal code <span class="req" aria-hidden="true">*</span></label>
+              <input class="input" type="text" id="bkTo" name="to" data-place-input placeholder="e.g. L3R 0B8" required>
+              <span class="hint" data-place-hint></span>
               <span class="field-error"></span>
             </div>
           </div>

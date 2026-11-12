@@ -159,33 +159,51 @@
 
   var LB_PER_KG = 2.2046226218;
 
-  function buildLocationSelect(name, id, preselectValue) {
-    var opts = R.locationOptions();
-    var html = '<option value="">Select a city…</option>';
-    html += '<optgroup label="GTA — 10 zones">';
-    opts.gta.forEach(function (o) {
-      html += '<option value="' + esc(o.value) + '">' + esc(o.label) + '</option>';
-    });
-    html += '</optgroup><optgroup label="Out of town (Same Day only)">';
-    opts.outOfTown.forEach(function (o) {
-      html += '<option value="' + esc(o.value) + '">' + esc(o.label) + '</option>';
-    });
-    html += '</optgroup>';
-
-    var sel = el('select', { class: 'select', name: name, id: id });
-    sel.innerHTML = html;
-    if (preselectValue) sel.value = preselectValue;
-    return sel;
+  /* Pickup / delivery fields take a postal code ("L6W 4V4") or a town name.
+     A shared <datalist> suggests every town we price; the hint underneath
+     shows which city and zone the entry resolved to. */
+  function ensurePlaceList() {
+    if (document.getElementById('bf-places')) return;
+    var dl = el('datalist', { id: 'bf-places' });
+    dl.innerHTML = R.cityNames().slice().sort().map(function (c) {
+      return '<option value="' + esc(c) + '">';
+    }).join('');
+    document.body.appendChild(dl);
   }
 
-  function findCityValue(cityName) {
-    if (!cityName) return '';
-    var opts = R.locationOptions();
-    var all = opts.gta.concat(opts.outOfTown);
-    for (var i = 0; i < all.length; i++) {
-      if (all[i].city.toLowerCase() === String(cityName).toLowerCase()) return all[i].value;
+  function legacyPlace(value) {
+    // Older saved quotes stored "z:1:Brampton" / "o:Barrie" — keep the town name.
+    var v = String(value || '');
+    return /^[zo]:/.test(v) ? v.split(':').pop() : v;
+  }
+
+  function enhancePlaceInput(input, hint) {
+    ensurePlaceList();
+    input.setAttribute('list', 'bf-places');
+    input.setAttribute('autocomplete', 'off');
+    input.setAttribute('spellcheck', 'false');
+    if (!input.placeholder) input.placeholder = 'Postal code, e.g. L6W 4V4';
+    function paint() {
+      if (!hint) return;
+      var place = R.resolvePlace(input.value);
+      hint.textContent = place ? R.describePlace(place) : 'Postal code or town name';
+      hint.classList.toggle('is-warn', !!place && place.kind === 'unknown');
     }
-    return '';
+    input.addEventListener('input', paint);
+    input.addEventListener('change', paint);
+    input._bfPaint = paint;
+    paint();
+  }
+
+  function buildPlaceInput(name, id, preset) {
+    var wrap = el('span', { class: 'place-field' });
+    var input = el('input', { class: 'input', type: 'text', name: name, id: id });
+    if (preset) input.value = legacyPlace(preset);
+    var hint = el('span', { class: 'hint', 'data-place-hint': '' });
+    wrap.appendChild(input);
+    wrap.appendChild(hint);
+    enhancePlaceInput(input, hint);
+    return { wrap: wrap, input: input };
   }
 
   function calcTemplate(uid, opts) {
@@ -210,8 +228,8 @@
       '</div>' +
       '<div class="calc-body">' +
         '<div class="calc-grid">' +
-          '<div class="field"><label for="from-' + uid + '">Pickup city</label><span data-slot="from"></span></div>' +
-          '<div class="field"><label for="to-' + uid + '">Delivery city</label><span data-slot="to"></span></div>' +
+          '<div class="field"><label for="from-' + uid + '">Pickup postal code</label><span data-slot="from"></span></div>' +
+          '<div class="field"><label for="to-' + uid + '">Delivery postal code</label><span data-slot="to"></span></div>' +
           '<div class="field">' +
             '<label for="weight-' + uid + '">Total weight</label>' +
             '<div style="display:flex;gap:.4rem">' +
@@ -256,7 +274,14 @@
 
     var lines = '';
     lines += line('Base rate <span class="muted">— ' + esc(q.basis) + '</span>', R.money(q.base));
-    if (q.uplift > 0) lines += line('Inter-zone uplift', R.money(q.uplift));
+    if (q.distanceKm != null) {
+      var dLabel = q.extraKm > 0
+        ? 'Distance <span class="muted">— about ' + q.distanceKm + ' km, ' + q.extraKm + ' km over ' +
+          R.SETTINGS.includedKm + ' @ ' + R.money(R.SETTINGS.perKmRate) + '/km</span>'
+        : 'Distance <span class="muted">— about ' + q.distanceKm + ' km, first ' +
+          R.SETTINGS.includedKm + ' km included</span>';
+      lines += line(dLabel, R.money(q.distanceCharge), q.distanceCharge === 0);
+    }
 
     var wLabel = q.billableWeight > 0
       ? 'Weight surcharge <span class="muted">— ' + q.billableWeight.toFixed(q.billableWeight % 1 ? 1 : 0) +
@@ -285,7 +310,7 @@
       '<div class="calc-lines">' + lines + '</div>' +
       notes +
       actions +
-      '<p class="calc-disclaimer">Estimated price — final rate confirmed at pickup based on actual weight. ' +
+      '<p class="calc-disclaimer">Estimated price — distance is estimated from postal codes, and the final rate is confirmed at pickup based on actual weight and route. ' +
       'All prices in CAD and include 13% HST as shown.</p>';
 
     var book = $('[data-book-link]', target);
@@ -313,10 +338,11 @@
       wrap.innerHTML = calcTemplate(id, { title: title, showPieces: showPieces });
       host.appendChild(wrap);
 
-      var fromSel = buildLocationSelect('from', 'from-' + id, findCityValue(host.getAttribute('data-from') || 'Brampton'));
-      var toSel = buildLocationSelect('to', 'to-' + id, findCityValue(host.getAttribute('data-to')));
-      $('[data-slot="from"]', wrap).replaceWith(fromSel);
-      $('[data-slot="to"]', wrap).replaceWith(toSel);
+      var fromBox = buildPlaceInput('from', 'from-' + id, host.getAttribute('data-from') || '');
+      var toBox = buildPlaceInput('to', 'to-' + id, host.getAttribute('data-to') || '');
+      $('[data-slot="from"]', wrap).replaceWith(fromBox.wrap);
+      $('[data-slot="to"]', wrap).replaceWith(toBox.wrap);
+      var fromSel = fromBox.input, toSel = toBox.input;
 
       var weightInput = $('[name="weight"]', wrap);
       var piecesInput = $('[name="pieces"]', wrap);
@@ -373,9 +399,10 @@
       var timer;
       function debounced() { clearTimeout(timer); timer = setTimeout(run, 300); }
 
-      [fromSel, toSel, vanInput].concat(radios).forEach(function (n) {
+      [vanInput].concat(radios).forEach(function (n) {
         n.addEventListener('change', run);
       });
+      [fromSel, toSel].forEach(function (n) { n.addEventListener('input', debounced); });
       if (piecesInput) piecesInput.addEventListener('input', debounced);
       weightInput.addEventListener('input', debounced);
 
@@ -383,13 +410,12 @@
     });
   }
 
-  /* Standalone location dropdowns (the booking form uses real form fields
-     rather than an injected calculator, so its selects are populated here). */
+  /* Standalone place inputs (the booking form uses real form fields rather
+     than an injected calculator, so its inputs are enhanced here). */
   function initLocationSelects() {
-    $$('select[data-location-select]').forEach(function (sel) {
-      if (sel.options.length) return;
-      var built = buildLocationSelect(sel.name, sel.id);
-      sel.innerHTML = built.innerHTML;
+    $$('input[data-place-input]').forEach(function (input) {
+      var hint = input.parentNode.querySelector('[data-place-hint]');
+      enhancePlaceInput(input, hint);
     });
   }
 
@@ -415,9 +441,23 @@
     var timer;
     function debounced() { clearTimeout(timer); timer = setTimeout(run, 300); }
 
-    ['from', 'to', 'van_required'].forEach(function (n) {
-      if (form.elements[n]) form.elements[n].addEventListener('change', run);
-    });
+    if (form.elements['van_required']) form.elements['van_required'].addEventListener('change', run);
+
+    // Step 1 postal code / town also fills the address step, if still empty.
+    function carry(fromName, postalName, cityName) {
+      var src = form.elements[fromName];
+      if (!src) return;
+      src.addEventListener('input', debounced);
+      src.addEventListener('change', function () {
+        var place = R.resolvePlace(src.value);
+        if (!place || place.kind === 'unknown') return;
+        var pc = form.elements[postalName], city = form.elements[cityName];
+        if (pc && !pc.value && place.postal && place.postal.length > 3) pc.value = place.postal;
+        if (city && !city.value) city.value = place.city.replace(/, [A-Z]{2}$/, '');
+      });
+    }
+    carry('from', 'pickup_postal', 'pickup_city');
+    carry('to', 'delivery_postal', 'delivery_city');
     $$('input[name="service_level"]', form).forEach(function (r) { r.addEventListener('change', run); });
     ['weight_lbs', 'pieces'].forEach(function (n) {
       if (form.elements[n]) form.elements[n].addEventListener('input', debounced);
@@ -734,8 +774,13 @@
           var n = bookForm.elements[name];
           if (n && value != null && value !== '' && !n.length) n.value = value;
         };
-        setIf('from', i.from);
-        setIf('to', i.to);
+        setIf('from', legacyPlace(i.from));
+        setIf('to', legacyPlace(i.to));
+        ['from', 'to'].forEach(function (n) {
+          var f = bookForm.elements[n];
+          if (f && f._bfPaint) f._bfPaint();
+          if (f) { try { f.dispatchEvent(new Event('change')); } catch (e) {} }
+        });
         setIf('weight_lbs', isFinite(i.weightLbs) ? Math.round(i.weightLbs * 10) / 10 : '');
         setIf('pieces', i.pieces);
         var van = bookForm.elements['van_required'];

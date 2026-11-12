@@ -3,14 +3,14 @@
     <ol class="breadcrumb"><li><a href="index.html">Home</a></li><li><a href="courier.html">Courier</a></li><li>Rates &amp; calculator</li></ol>
     <span class="eyebrow eyebrow--yellow">Pricing</span>
     <h1 class="rule">Courier Rates for the GTA &mdash; All of Them</h1>
-    <p class="lead">Ten zones, three service levels, thirty published rates. Price your own job in about thirty seconds and see exactly how the number is built &mdash; base, weight, van, HST, itemised.</p>
+    <p class="lead">Three zones, three service levels, one simple distance rule. Enter two postal codes and see exactly how the number is built &mdash; base, distance, weight, van, HST, itemised.</p>
   </div>
 </section>
 
 <!-- ===== CALCULATOR ===== -->
 <section class="section section--tight">
   <div class="container container--narrow">
-    <div data-calculator data-from="Brampton" data-title="Price your delivery"></div>
+    <div data-calculator data-from="" data-title="Price your delivery"></div>
   </div>
 </section>
 
@@ -19,8 +19,8 @@
   <div class="container">
     <div class="section-head">
       <span class="eyebrow">The rate chart</span>
-      <h2 class="rule">Thirty rates, published in full</h2>
-      <p>These apply to deliveries to or from Zone&nbsp;1 &mdash; Brampton and Mississauga &mdash; which covers the large majority of our work. All prices in Canadian dollars, excluding 13% HST.</p>
+      <h2 class="rule">Every rate, published in full</h2>
+      <p>A trip between two zones uses the higher zone&rsquo;s rate. A trip that starts and ends in the same zone is $19. All prices in Canadian dollars, excluding 13% HST.</p>
     </div>
     {{ZONE_TABLE}}
   </div>
@@ -32,7 +32,7 @@
     <div class="section-head">
       <span class="eyebrow">Surcharges</span>
       <h2 class="rule">Everything that can be added to a base rate</h2>
-      <p>There are three, and this is all of them.</p>
+      <p>There are four, and this is all of them.</p>
     </div>
     <div class="table-wrap">
       <table class="rate-table">
@@ -40,6 +40,7 @@
           <tr><th scope="col">Charge</th><th scope="col" class="n">Amount</th><th scope="col">When it applies</th></tr>
         </thead>
         <tbody>
+          <tr><th scope="row">Distance</th><td class="n price-cell">$1.00 / km</td><td>Only on distance <b>beyond the first 50&nbsp;km</b>, estimated from the pickup and delivery postal codes. The same $1/km on every service level.</td></tr>
           <tr><th scope="row">Weight surcharge</th><td class="n price-cell">$0.15 / lb</td><td>Only on weight <b>exceeding 30&nbsp;lbs</b>. A 30&nbsp;lb parcel carries nothing; a 45&nbsp;lb parcel is charged on 15&nbsp;lbs.</td></tr>
           <tr><th scope="row">Van charge</th><td class="n price-cell">$15.00</td><td>When the job requires a van rather than a car.</td></tr>
           <tr><th scope="row">HST</th><td class="n price-cell">13%</td><td>Applied to the full subtotal, after all other charges.</td></tr>
@@ -59,14 +60,18 @@
     <div class="section-head">
       <span class="eyebrow">The formula</span>
       <h2 class="rule">How a price is put together</h2>
-      <p>Five steps, in this order. The calculator shows you every one of them.</p>
+      <p>Six steps, in this order. The calculator shows you every one of them.</p>
     </div>
     <div class="grid grid-2" style="gap:2rem">
       <div>
         <div class="grid steps" style="gap:1.5rem">
           <div class="step">
             <h3>Base rate</h3>
-            <p>Look up the destination zone and the service level in the chart above. Zone 4 on Same Day is $25.00.</p>
+            <p>Find both postal codes&rsquo; zones in the chart above. Different zones: take the higher zone&rsquo;s rate. Same zone: $19. Multiply by 1.5 for Rush or 1.7 for Direct.</p>
+          </div>
+          <div class="step">
+            <h3>Distance</h3>
+            <p>The first 50&nbsp;km are included. Every kilometre after that is $1.00.</p>
           </div>
           <div class="step">
             <h3>Weight surcharge</h3>
@@ -78,7 +83,7 @@
           </div>
           <div class="step">
             <h3>Subtotal</h3>
-            <p>Base plus weight plus van.</p>
+            <p>Base plus distance plus weight plus van.</p>
           </div>
           <div class="step">
             <h3>HST</h3>
@@ -89,21 +94,23 @@
       <div>
         <div class="card" style="background:var(--mist)">
           <h4 style="font-family:var(--font-display)">Brampton &rarr; Markham, 45 lbs, van, Same Day</h4>
-          <div class="calc-line"><span>Base &mdash; Zone 4, Same Day</span><span class="num">$25.00</span></div>
+          <div class="calc-line"><span>Base &mdash; Zone 1 to Zone 2, Same Day</span><span class="num">$22.00</span></div>
+          <div class="calc-line is-muted"><span>Distance &mdash; about 48 km, within the first 50</span><span class="num">$0.00</span></div>
           <div class="calc-line"><span>Weight &mdash; 15 lbs over at $0.15</span><span class="num">$2.25</span></div>
           <div class="calc-line"><span>Van charge</span><span class="num">$15.00</span></div>
-          <div class="calc-line is-sub"><span>Subtotal</span><span class="num">$42.25</span></div>
-          <div class="calc-line"><span>HST 13%</span><span class="num">$5.49</span></div>
-          <div class="calc-line is-total"><span>Total</span><span class="num">$47.74</span></div>
+          <div class="calc-line is-sub"><span>Subtotal</span><span class="num">$39.25</span></div>
+          <div class="calc-line"><span>HST 13%</span><span class="num">$5.10</span></div>
+          <div class="calc-line is-total"><span>Total</span><span class="num">$44.35</span></div>
         </div>
         <div class="card" style="background:var(--mist);margin-top:1.25rem">
-          <h4 style="font-family:var(--font-display)">Brampton &rarr; Toronto, 20 lbs, no van, Rush</h4>
-          <div class="calc-line"><span>Base &mdash; Zone 2, Rush</span><span class="num">$32.00</span></div>
+          <h4 style="font-family:var(--font-display)">Brampton &rarr; Kitchener, 10 lbs, no van, Same Day</h4>
+          <div class="calc-line"><span>Base &mdash; Zone 1 to Zone 3, Same Day</span><span class="num">$32.00</span></div>
+          <div class="calc-line"><span>Distance &mdash; about 87 km, 37 km over 50 at $1</span><span class="num">$37.00</span></div>
           <div class="calc-line is-muted"><span>Weight &mdash; under 30 lbs</span><span class="num">$0.00</span></div>
           <div class="calc-line is-muted"><span>Van charge</span><span class="num">$0.00</span></div>
-          <div class="calc-line is-sub"><span>Subtotal</span><span class="num">$32.00</span></div>
-          <div class="calc-line"><span>HST 13%</span><span class="num">$4.16</span></div>
-          <div class="calc-line is-total"><span>Total</span><span class="num">$36.16</span></div>
+          <div class="calc-line is-sub"><span>Subtotal</span><span class="num">$69.00</span></div>
+          <div class="calc-line"><span>HST 13%</span><span class="num">$8.97</span></div>
+          <div class="calc-line is-total"><span>Total</span><span class="num">$77.97</span></div>
         </div>
       </div>
     </div>
@@ -116,16 +123,16 @@
     <div class="section-head">
       <span class="eyebrow">The awkward cases</span>
       <h2 class="rule">Where the chart needs a rule</h2>
-      <p>A zone chart built around Brampton cannot answer every question on its own. Here is exactly what we do in the cases it does not cover.</p>
+      <p>Here is exactly what we do in the cases a zone chart does not answer on its own.</p>
     </div>
     <div class="grid grid-3">
       <div class="card">
-        <h3>Neither end is Zone 1</h3>
-        <p class="muted" style="font-size:.9375rem">Markham to Burlington never touches Brampton or Mississauga. We take the <b>higher of the two zone rates</b> and add a <b>$10 inter-zone uplift</b>. Markham ($25) to Burlington ($35) prices at <b>$45</b> on Same Day. The calculator shows the uplift as its own line.</p>
+        <h3>Both ends in the same zone</h3>
+        <p class="muted" style="font-size:.9375rem">Ajax to Pickering, or Kitchener to Waterloo, never leaves its zone. Any trip that starts and ends in the same zone is <b>$19</b> on Same Day &mdash; $28.50 Rush, $32.30 Direct &mdash; plus $1/km if it runs past 50&nbsp;km.</p>
       </div>
       <div class="card">
-        <h3>Whitby and Oshawa</h3>
-        <p class="muted" style="font-size:.9375rem">Both sit in Zone&nbsp;10 and both also appear on our older out-of-town sheet. The <b>zone rate wins</b> &mdash; they price at <b>$46</b> Same Day, not the out-of-town figure. Anything inside the ten GTA zones is always priced from the zone chart.</p>
+        <h3>How distance is measured</h3>
+        <p class="muted" style="font-size:.9375rem">We estimate the driving distance from the <b>pickup and delivery postal codes</b>. It is an estimate, so the calculator shows it as its own line and we confirm it on the call. Rural postal codes cover too wide an area &mdash; type the town name instead, or call us.</p>
       </div>
       <div class="card">
         <h3>Rush and Direct out of town</h3>
@@ -134,7 +141,7 @@
     </div>
     <div class="callout" style="margin-top:1.75rem">
       <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0Z"/><path d="M12 9v4M12 17h.01"/></svg>
-      <p><b>Some jobs we will not price automatically.</b> Anything over 500&nbsp;lbs, more than ten pieces, a destination on neither list, or a run to Buffalo or Montreal. Cross-border work carries customs paperwork and a different liability profile, so it gets a human quote every time.</p>
+      <p><b>Some jobs we will not price automatically.</b> Anything over 500&nbsp;lbs, more than ten pieces, a destination outside the three zones and the out-of-town list, a trip with both ends out of town, or a run to Buffalo or Montreal. Cross-border work carries customs paperwork and a different liability profile, so it gets a human quote every time.</p>
     </div>
   </div>
 </section>
@@ -143,7 +150,7 @@
 <section class="section">
   <div class="container container--narrow center">
     <h2>Delivering outside the GTA?</h2>
-    <p class="lead muted">More than sixty Ontario destinations carry a flat published same-day rate, from Bolton at $40 to Sudbury at $600.</p>
+    <p class="lead muted">More than fifty Ontario destinations outside our three zones carry a flat published same-day rate, from Bolton at $40 to Sudbury at $600.</p>
     <a class="btn btn-dark btn-lg" href="courier-out-of-town.html" style="margin-top:.5rem">See out-of-town rates</a>
   </div>
 </section>

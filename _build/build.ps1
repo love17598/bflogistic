@@ -29,7 +29,7 @@ $courierSubnav = @'
     <a href="courier-rush.html">Rush</a>
     <a href="courier-direct.html">Direct</a>
     <a href="courier-pricing.html">Rates &amp; calculator</a>
-    <a href="courier-zones.html">The 10 zones</a>
+    <a href="courier-zones.html">The 3 zones</a>
     <a href="courier-out-of-town.html">Out of town</a>
     <a href="courier-book.html">Book a pickup</a>
   </div>
@@ -55,35 +55,35 @@ $logisticsSubnav = @'
 $pages = @(
   @{ f='index.html';                subnav='';
      t='BF Logistics | Same-Day Courier & Delivery in the GTA';
-     d='Same-day courier across 10 GTA zones. Book by 11:30 AM, delivered by 5 PM. Rates from $18. Instant online pricing. Call (905) 500-9443.' }
+     d='Same-day courier across 3 GTA zones. Book by 11:30 AM, delivered by 5 PM. Rates from $19. Instant online pricing. Call (905) 500-9443.' }
 
   @{ f='courier.html';              subnav='courier';
      t='Same-Day Courier Service GTA | BF Logistics';
-     d='Same-day, 3-hour rush and 90-minute direct delivery across the GTA. Transparent zone pricing from $18. Get an instant price and book online.' }
+     d='Same-day, 3-hour rush and 90-minute direct delivery across the GTA. Transparent zone pricing from $19. Get an instant price and book online.' }
 
   @{ f='courier-same-day.html';     subnav='courier';
      t='Same-Day Delivery GTA - Book by 11:30, There by 5 | BF Logistics';
-     d='Book by 11:30 AM and we deliver by 5:00 PM anywhere in the GTA. Rates from $18. Reliable same-day courier from BF Logistics, Brampton.' }
+     d='Book by 11:30 AM and we deliver by 5:00 PM anywhere in the GTA. Rates from $19. Reliable same-day courier from BF Logistics, Brampton.' }
 
   @{ f='courier-rush.html';         subnav='courier';
      t='3-Hour Rush Courier Service GTA | BF Logistics';
-     d='Rush courier across the GTA: three hours from pickup to delivery, rates from $22. The service that runs once the 11:30 AM same-day cutoff has passed.' }
+     d='Rush courier across the GTA: three hours from pickup to delivery, rates from $28.50. The service that runs once the 11:30 AM same-day cutoff has passed.' }
 
   @{ f='courier-direct.html';       subnav='courier';
      t='90-Minute Direct Delivery GTA | BF Logistics';
-     d='Direct courier across the GTA: ninety minutes, point to point, no other stops. Rates from $28. For STAT samples, line-down parts and hard deadlines.' }
+     d='Direct courier across the GTA: ninety minutes, point to point, no other stops. Rates from $32.30. For STAT samples, line-down parts and hard deadlines.' }
 
   @{ f='courier-pricing.html';      subnav='courier';
-     t='Courier Rates GTA - Zone Pricing from $18 | BF Logistics';
-     d='See our full GTA courier rate chart. 10 zones, three service levels, no hidden fees. Get an instant price for your delivery in seconds.' }
+     t='Courier Rates GTA - Zone Pricing from $19 | BF Logistics';
+     d='See our full GTA courier rate chart. 3 zones, three service levels, no hidden fees. Get an instant price for your delivery in seconds.' }
 
   @{ f='courier-zones.html';        subnav='courier';
-     t='Our 10 GTA Delivery Zones | BF Logistics';
-     d='The ten BF Logistics delivery zones across the Greater Toronto Area, mapped and priced. Same Day rates from $18 in Brampton to $46 in Oshawa.' }
+     t='Our 3 Delivery Zones | BF Logistics';
+     d='The three BF Logistics delivery zones, from Brampton and Toronto out to Hamilton and Waterloo Region. Same Day from $19, plus $1/km after 50 km.' }
 
   @{ f='courier-out-of-town.html';  subnav='courier';
      t='Out-of-Town Same-Day Delivery from the GTA | BF Logistics';
-     d='Same-day delivery from the GTA to Barrie, Guelph, Hamilton, Kitchener, London and beyond. Flat published rates. Call (905) 500-9443.' }
+     d='Same-day delivery from the GTA to Barrie, London, Niagara, Peterborough and beyond. Flat published rates. Call (905) 500-9443.' }
 
   @{ f='courier-book.html';         subnav='courier';
      t='Book a Pickup | BF Logistics';
@@ -99,7 +99,7 @@ $pages = @(
 
   @{ f='about.html';                subnav='';
      t='About BF Logistics | Brampton Courier & Logistics';
-     d='BF Logistics runs same-day courier and freight from Brampton across ten GTA zones, with the whole rate chart published. Here is how we work.' }
+     d='BF Logistics runs same-day courier and freight from Brampton across three delivery zones, with the whole rate chart published. Here is how we work.' }
 
   @{ f='faq.html';                  subnav='';
      t='Courier FAQ - Cutoffs, Rates & Coverage | BF Logistics';

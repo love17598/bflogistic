@@ -1,121 +1,57 @@
 <section class="page-hero">
   <div class="container">
-    <ol class="breadcrumb"><li><a href="index.html">Home</a></li><li><a href="courier.html">Courier</a></li><li>The 10 zones</li></ol>
+    <ol class="breadcrumb"><li><a href="index.html">Home</a></li><li><a href="courier.html">Courier</a></li><li>The 3 zones</li></ol>
     <span class="eyebrow eyebrow--yellow">Coverage</span>
-    <h1 class="rule">Our Ten GTA Delivery Zones</h1>
-    <p class="lead">Every destination we serve inside the Greater Toronto Area sits in one of ten numbered zones, and every zone has a published price. Zone&nbsp;1 &mdash; Brampton and Mississauga &mdash; is where we are based and where most runs start or finish.</p>
+    <h1 class="rule">Our Three Delivery Zones</h1>
+    <p class="lead">Every city we serve sits in one of three zones, and every zone has one published Same Day price: <b>$19</b>, <b>$22</b> or <b>$32</b>. The first 50&nbsp;km are included &mdash; after that it is a flat $1 per kilometre.</p>
   </div>
 </section>
 
 <section class="section">
   <div class="container">
     <div class="section-head">
-      <h2 class="rule">The zones at a glance</h2>
-      <p>Positioned roughly as they sit on the map, priced on Same Day. Dashed lines show the Zone&nbsp;1 relationship the rate card is built around.</p>
+      <h2 class="rule">The zones on the map</h2>
+      <p>Cities are plotted at their approximate real positions. The dashed ring shows roughly how far you can go from Brampton before the per-kilometre charge starts.</p>
     </div>
 
     <div class="zonemap">
-      <svg viewBox="0 0 1060 620" role="img" aria-labelledby="zmTitle zmDesc" width="1060" height="620">
-        <title id="zmTitle">Schematic map of the ten BF Logistics GTA delivery zones</title>
-        <desc id="zmDesc">A stylised diagram, not a survey map. Zone 1 Brampton and Mississauga sits at the centre with dashed connections to the other nine zones. Same Day prices range from $18 in Zone 1 to $46 in Zone 10. The same information is listed in the table below.</desc>
-
-        <!-- Lake Ontario -->
-        <path class="zm-lake" d="M0 512 C 220 492, 460 470, 720 462 C 880 457, 990 452, 1060 448 L 1060 620 L 0 620 Z"/>
-        <text class="zm-lake-label" x="700" y="560">Lake Ontario</text>
-
-        <!-- Zone 1 relationships -->
-        <g class="zm-links">
-          <line class="zm-link" x1="320" y1="290" x2="530" y2="58"/>
-          <line class="zm-link" x1="320" y1="290" x2="320" y2="168"/>
-          <line class="zm-link" x1="320" y1="290" x2="530" y2="168"/>
-          <line class="zm-link" x1="320" y1="290" x2="740" y2="168"/>
-          <line class="zm-link" x1="320" y1="290" x2="110" y2="290"/>
-          <line class="zm-link" x1="320" y1="290" x2="530" y2="290"/>
-          <line class="zm-link" x1="320" y1="290" x2="740" y2="290"/>
-          <line class="zm-link" x1="320" y1="290" x2="950" y2="290"/>
-          <line class="zm-link" x1="320" y1="290" x2="215" y2="400"/>
-        </g>
-
-        <!-- Zone 6 -->
-        <g class="zm-node"><rect class="zm-card" x="437" y="14" width="186" height="88" rx="12"/>
-          <rect x="459" y="32" width="30" height="6" rx="3" fill="#B0803A"/>
-          <text class="zm-zone" x="459" y="58">ZONE 6</text>
-          <text class="zm-city" x="459" y="78">Aurora /</text><text class="zm-city" x="459" y="94">Newmarket</text>
-          <text class="zm-price" x="601" y="82" text-anchor="end">$35</text></g>
-
-        <!-- Zone 3 -->
-        <g class="zm-node"><rect class="zm-card" x="227" y="124" width="186" height="88" rx="12"/>
-          <rect x="249" y="142" width="30" height="6" rx="3" fill="#EFAC0F"/>
-          <text class="zm-zone" x="249" y="168">ZONE 3</text>
-          <text class="zm-city" x="249" y="188">Vaughan</text>
-          <text class="zm-price" x="391" y="192" text-anchor="end">$22</text></g>
-
-        <!-- Zone 5 -->
-        <g class="zm-node"><rect class="zm-card" x="437" y="124" width="186" height="88" rx="12"/>
-          <rect x="459" y="142" width="30" height="6" rx="3" fill="#CE8A1E"/>
-          <text class="zm-zone" x="459" y="168">ZONE 5</text>
-          <text class="zm-city" x="459" y="188">Richmond Hill</text>
-          <text class="zm-price" x="601" y="192" text-anchor="end">$30</text></g>
-
-        <!-- Zone 4 -->
-        <g class="zm-node"><rect class="zm-card" x="647" y="124" width="186" height="88" rx="12"/>
-          <rect x="669" y="142" width="30" height="6" rx="3" fill="#E39C14"/>
-          <text class="zm-zone" x="669" y="168">ZONE 4</text>
-          <text class="zm-city" x="669" y="188">Markham</text>
-          <text class="zm-price" x="811" y="192" text-anchor="end">$25</text></g>
-
-        <!-- Zone 8 -->
-        <g class="zm-node"><rect class="zm-card" x="17" y="246" width="186" height="88" rx="12"/>
-          <rect x="39" y="264" width="30" height="6" rx="3" fill="#B0803A"/>
-          <text class="zm-zone" x="39" y="290">ZONE 8</text>
-          <text class="zm-city" x="39" y="310">Burlington /</text><text class="zm-city" x="39" y="326">Milton</text>
-          <text class="zm-price" x="181" y="314" text-anchor="end">$35</text></g>
-
-        <!-- Zone 1 — the hub -->
-        <g class="zm-node"><rect class="zm-card" x="227" y="246" width="186" height="88" rx="12" stroke="#232323" stroke-width="2.5"/>
-          <rect x="249" y="264" width="30" height="6" rx="3" fill="#FCC10F"/>
-          <text class="zm-zone" x="249" y="290" fill="#8A6400">ZONE 1 &#183; BASE</text>
-          <text class="zm-city" x="249" y="310">Brampton /</text><text class="zm-city" x="249" y="326">Mississauga</text>
-          <text class="zm-price" x="391" y="314" text-anchor="end">$18</text></g>
-
-        <!-- Zone 2 -->
-        <g class="zm-node"><rect class="zm-card" x="437" y="246" width="186" height="88" rx="12"/>
-          <rect x="459" y="264" width="30" height="6" rx="3" fill="#F5B60D"/>
-          <text class="zm-zone" x="459" y="290">ZONE 2</text>
-          <text class="zm-city" x="459" y="310">Toronto /</text><text class="zm-city" x="459" y="326">Scarborough</text>
-          <text class="zm-price" x="601" y="314" text-anchor="end">$21</text></g>
-
-        <!-- Zone 9 -->
-        <g class="zm-node"><rect class="zm-card" x="647" y="246" width="186" height="88" rx="12"/>
-          <rect x="669" y="264" width="30" height="6" rx="3" fill="#7C7350"/>
-          <text class="zm-zone" x="669" y="290">ZONE 9</text>
-          <text class="zm-city" x="669" y="310">Pickering /</text><text class="zm-city" x="669" y="326">Ajax</text>
-          <text class="zm-price" x="811" y="314" text-anchor="end">$40</text></g>
-
-        <!-- Zone 10 -->
-        <g class="zm-node"><rect class="zm-card" x="857" y="246" width="186" height="88" rx="12"/>
-          <rect x="879" y="264" width="30" height="6" rx="3" fill="#3D4A5C"/>
-          <text class="zm-zone" x="879" y="290">ZONE 10</text>
-          <text class="zm-city" x="879" y="310">Whitby /</text><text class="zm-city" x="879" y="326">Oshawa</text>
-          <text class="zm-price" x="1021" y="314" text-anchor="end">$46</text></g>
-
-        <!-- Zone 7 -->
-        <g class="zm-node"><rect class="zm-card" x="122" y="356" width="186" height="88" rx="12"/>
-          <rect x="144" y="374" width="30" height="6" rx="3" fill="#CE8A1E"/>
-          <text class="zm-zone" x="144" y="400">ZONE 7</text>
-          <text class="zm-city" x="144" y="420">Oakville /</text><text class="zm-city" x="144" y="436">Georgetown</text>
-          <text class="zm-price" x="286" y="424" text-anchor="end">$30</text></g>
+      <svg viewBox="0 0 1080 720" role="img" aria-labelledby="zmTitle zmDesc" width="1080" height="720">
+        <title id="zmTitle">Map of the three BF Logistics delivery zones</title>
+        <desc id="zmDesc">Cities plotted at their approximate real positions. Zone 1 ($19 Same Day): Brampton, Mississauga, Toronto, Scarborough, Vaughan, Richmond Hill, Oakville, Milton, Georgetown. Zone 2 ($22): Markham, Pickering, Ajax, Whitby, Oshawa, Aurora, Newmarket, Guelph, Acton. Zone 3 ($32): Hamilton, Kitchener, Waterloo, Cambridge. The dashed ring shows roughly where trips from Brampton stay within the 50 km included in the base rate. The same information is listed in the table below.</desc>
+        <path class="zm-lake" d="M 520 720 L 476 660 C 500 600, 530 540, 562 510 C 600 470, 640 430, 690 388 C 740 352, 790 322, 830 292 C 870 262, 920 230, 985 214 C 1020 202, 1050 192, 1080 188 L 1080 720 Z"/>
+        <text class="zm-lake-label" x="760" y="560">Lake Ontario</text>
+        <circle cx="514" cy="306" r="246" fill="none" stroke="#9AA3AE" stroke-width="1.5" stroke-dasharray="6 6"/>
+        <text class="zm-city" x="514" y="54" text-anchor="middle" style="font-size:12px;fill:#6B7280">&#8776; 50 km by road from Brampton &#8212; no distance charge inside</text>
+        <g class="zm-node"><circle cx="514" cy="306" r="9" fill="#FCC10F" stroke="#232323" stroke-width="2.5"/><text class="zm-city" x="527" y="311" text-anchor="start" style="font-weight:800">Brampton &#183; base</text></g>
+        <g class="zm-node"><circle cx="433" cy="350" r="7" fill="#FCC10F" stroke="#fff" stroke-width="2"/><text class="zm-city" x="421" y="354" text-anchor="end">Georgetown</text></g>
+        <g class="zm-node"><circle cx="450" cy="445" r="7" fill="#FCC10F" stroke="#fff" stroke-width="2"/><text class="zm-city" x="438" y="449" text-anchor="end">Milton</text></g>
+        <g class="zm-node"><circle cx="541" cy="491" r="7" fill="#FCC10F" stroke="#fff" stroke-width="2"/><text class="zm-city" x="529" y="495" text-anchor="end">Oakville</text></g>
+        <g class="zm-node"><circle cx="687" cy="318" r="7" fill="#FCC10F" stroke="#fff" stroke-width="2"/><text class="zm-city" x="699" y="322" text-anchor="start">Toronto</text></g>
+        <g class="zm-node"><circle cx="625" cy="223" r="7" fill="#FCC10F" stroke="#fff" stroke-width="2"/><text class="zm-city" x="613" y="227" text-anchor="end">Vaughan</text></g>
+        <g class="zm-node"><circle cx="778" cy="266" r="7" fill="#FCC10F" stroke="#fff" stroke-width="2"/><text class="zm-city" x="790" y="270" text-anchor="start">Scarborough</text></g>
+        <g class="zm-node"><circle cx="573" cy="382" r="7" fill="#FCC10F" stroke="#fff" stroke-width="2"/><text class="zm-city" x="585" y="386" text-anchor="start">Mississauga</text></g>
+        <g class="zm-node"><circle cx="688" cy="179" r="7" fill="#FCC10F" stroke="#fff" stroke-width="2"/><text class="zm-city" x="676" y="183" text-anchor="end">Richmond Hill</text></g>
+        <g class="zm-node"><circle cx="891" cy="195" r="7" fill="#CE8A1E" stroke="#fff" stroke-width="2"/><text class="zm-city" x="891" y="217" text-anchor="middle">Ajax</text></g>
+        <g class="zm-node"><circle cx="847" cy="191" r="7" fill="#CE8A1E" stroke="#fff" stroke-width="2"/><text class="zm-city" x="847" y="179" text-anchor="middle">Pickering</text></g>
+        <g class="zm-node"><circle cx="750" cy="194" r="7" fill="#CE8A1E" stroke="#fff" stroke-width="2"/><text class="zm-city" x="750" y="182" text-anchor="middle">Markham</text></g>
+        <g class="zm-node"><circle cx="661" cy="66" r="7" fill="#CE8A1E" stroke="#fff" stroke-width="2"/><text class="zm-city" x="673" y="70" text-anchor="start">Newmarket</text></g>
+        <g class="zm-node"><circle cx="929" cy="166" r="7" fill="#CE8A1E" stroke="#fff" stroke-width="2"/><text class="zm-city" x="929" y="154" text-anchor="middle">Whitby</text></g>
+        <g class="zm-node"><circle cx="665" cy="101" r="7" fill="#CE8A1E" stroke="#fff" stroke-width="2"/><text class="zm-city" x="677" y="105" text-anchor="start">Aurora</text></g>
+        <g class="zm-node"><circle cx="972" cy="149" r="7" fill="#CE8A1E" stroke="#fff" stroke-width="2"/><text class="zm-city" x="984" y="153" text-anchor="start">Oshawa</text></g>
+        <g class="zm-node"><circle cx="262" cy="435" r="7" fill="#CE8A1E" stroke="#fff" stroke-width="2"/><text class="zm-city" x="262" y="423" text-anchor="middle">Guelph</text></g>
+        <g class="zm-node"><circle cx="368" cy="364" r="7" fill="#CE8A1E" stroke="#fff" stroke-width="2"/><text class="zm-city" x="356" y="368" text-anchor="end">Acton</text></g>
+        <g class="zm-node"><circle cx="461" cy="638" r="7" fill="#3D4A5C" stroke="#fff" stroke-width="2"/><text class="zm-city" x="449" y="642" text-anchor="end">Hamilton</text></g>
+        <g class="zm-node"><circle cx="144" cy="504" r="7" fill="#3D4A5C" stroke="#fff" stroke-width="2"/><text class="zm-city" x="144" y="526" text-anchor="middle">Kitchener</text></g>
+        <g class="zm-node"><circle cx="102" cy="473" r="7" fill="#3D4A5C" stroke="#fff" stroke-width="2"/><text class="zm-city" x="102" y="461" text-anchor="middle">Waterloo</text></g>
+        <g class="zm-node"><circle cx="233" cy="534" r="7" fill="#3D4A5C" stroke="#fff" stroke-width="2"/><text class="zm-city" x="245" y="538" text-anchor="start">Cambridge</text></g>
       </svg>
     </div>
 
     <div class="zone-legend">
-      <span><i style="background:#FCC10F"></i> $18</span>
-      <span><i style="background:#E39C14"></i> $25</span>
-      <span><i style="background:#CE8A1E"></i> $30</span>
-      <span><i style="background:#B0803A"></i> $35</span>
-      <span><i style="background:#7C7350"></i> $40</span>
-      <span><i style="background:#3D4A5C"></i> $46</span>
-      <span class="muted">Same Day rate, excluding HST. Schematic layout &mdash; not to scale.</span>
+      <span><i style="background:#FCC10F"></i> Zone 1 &middot; $19</span>
+      <span><i style="background:#CE8A1E"></i> Zone 2 &middot; $22</span>
+      <span><i style="background:#3D4A5C"></i> Zone 3 &middot; $32</span>
+      <span class="muted">Same Day base rate, excluding HST. Positions approximate.</span>
     </div>
   </div>
 </section>
@@ -124,30 +60,9 @@
   <div class="container">
     <div class="section-head">
       <h2 class="rule">Every zone, every city, every rate</h2>
-      <p>All three service levels. To or from Zone&nbsp;1, excluding HST.</p>
+      <p>All three service levels, excluding HST. Rush is the base rate &times;&nbsp;1.5 and Direct is &times;&nbsp;1.7.</p>
     </div>
-    <div class="table-wrap">
-      <table class="rate-table">
-        <thead>
-          <tr>
-            <th scope="col">Zone</th><th scope="col">Cities covered</th>
-            <th scope="col" class="n">Same Day</th><th scope="col" class="n">Rush</th><th scope="col" class="n">Direct</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr><th scope="row"><span class="zone-no">1</span></th><td>Brampton, Mississauga</td><td class="n price-cell price-cell--lead">$18.00</td><td class="n price-cell">$22.00</td><td class="n price-cell">$28.00</td></tr>
-          <tr><th scope="row"><span class="zone-no">2</span></th><td>Toronto, Scarborough</td><td class="n price-cell price-cell--lead">$21.00</td><td class="n price-cell">$32.00</td><td class="n price-cell">$38.00</td></tr>
-          <tr><th scope="row"><span class="zone-no">3</span></th><td>Vaughan</td><td class="n price-cell price-cell--lead">$22.00</td><td class="n price-cell">$34.00</td><td class="n price-cell">$40.00</td></tr>
-          <tr><th scope="row"><span class="zone-no">4</span></th><td>Markham</td><td class="n price-cell price-cell--lead">$25.00</td><td class="n price-cell">$36.00</td><td class="n price-cell">$42.00</td></tr>
-          <tr><th scope="row"><span class="zone-no">5</span></th><td>Richmond Hill</td><td class="n price-cell price-cell--lead">$30.00</td><td class="n price-cell">$42.00</td><td class="n price-cell">$48.00</td></tr>
-          <tr><th scope="row"><span class="zone-no">6</span></th><td>Aurora, Newmarket</td><td class="n price-cell price-cell--lead">$35.00</td><td class="n price-cell">$45.00</td><td class="n price-cell">$51.00</td></tr>
-          <tr><th scope="row"><span class="zone-no">7</span></th><td>Oakville, Georgetown</td><td class="n price-cell price-cell--lead">$30.00</td><td class="n price-cell">$40.00</td><td class="n price-cell">$50.00</td></tr>
-          <tr><th scope="row"><span class="zone-no">8</span></th><td>Burlington, Milton</td><td class="n price-cell price-cell--lead">$35.00</td><td class="n price-cell">$45.00</td><td class="n price-cell">$55.00</td></tr>
-          <tr><th scope="row"><span class="zone-no">9</span></th><td>Pickering, Ajax</td><td class="n price-cell price-cell--lead">$40.00</td><td class="n price-cell">$50.00</td><td class="n price-cell">$60.00</td></tr>
-          <tr><th scope="row"><span class="zone-no">10</span></th><td>Whitby, Oshawa</td><td class="n price-cell price-cell--lead">$46.00</td><td class="n price-cell">$56.00</td><td class="n price-cell">$66.00</td></tr>
-        </tbody>
-      </table>
-    </div>
+    {{ZONE_TABLE}}
   </div>
 </section>
 
@@ -155,13 +70,14 @@
   <div class="container">
     <div style="display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:3rem" class="hub-grid">
       <div>
-        <h2 class="rule">Why the chart is built around Zone 1</h2>
-        <p>We are based at Suite 202-49 Hillcrest Ave in Brampton, and the overwhelming majority of our work either starts or finishes in Zone&nbsp;1. That is why the rate card reads &ldquo;for deliveries to and from Zone&nbsp;1&rdquo; &mdash; the published price is the price for a trip with one end here.</p>
-        <p>When a job connects two outer zones and never touches Zone&nbsp;1 &mdash; Markham to Burlington, say &mdash; we take the higher of the two zone rates and add a <b>$10 inter-zone uplift</b>. Markham is $25 and Burlington is $35, so that run prices at <b>$45</b> on Same Day. The calculator shows the uplift on its own line so you can see it rather than guess at it.</p>
-        <p>If a destination is not in the ten zones at all, it falls to the <a href="courier-out-of-town.html">out-of-town rate sheet</a>, which covers more than sixty Ontario towns and cities at a flat same-day price.</p>
+        <h2 class="rule">How the zone price is chosen</h2>
+        <p><b>Between two zones,</b> the higher zone&rsquo;s rate applies. Brampton (Zone&nbsp;1) to Markham (Zone&nbsp;2) is $22 on Same Day; Toronto (Zone&nbsp;1) to Hamilton (Zone&nbsp;3) is $32.</p>
+        <p><b>Inside one zone,</b> the price is $19 &mdash; whichever zone it is. Ajax to Pickering (both Zone&nbsp;2) is $19, and so is Kitchener to Waterloo (both Zone&nbsp;3).</p>
+        <p><b>Longer trips</b> add $1 for every kilometre after the first 50. We estimate the distance from the pickup and delivery postal codes, and the calculator shows it as its own line before you book.</p>
+        <p>If a destination is not in the three zones, it falls to the <a href="courier-out-of-town.html">out-of-town rate sheet</a>, which covers more than fifty Ontario towns and cities at a flat same-day price.</p>
       </div>
       <div>
-        <div data-calculator data-from="Markham" data-to="Burlington" data-title="Try a cross-zone trip"></div>
+        <div data-calculator data-from="L6W 4V4" data-to="L8P 4R5" data-title="Try a longer trip"></div>
       </div>
     </div>
   </div>
@@ -170,7 +86,7 @@
 <section class="cta-band">
   <div class="container">
     <h2>Find your zone, get your price</h2>
-    <p>If your city is on the list above, your price is already published. If it is not, we will quote it in one phone call.</p>
+    <p>Type your postal codes into the calculator and the zone, distance and price appear instantly. Anything else, we will quote in one phone call.</p>
     <div class="btn-row">
       <a class="btn btn-dark btn-lg" href="courier-pricing.html">Open the calculator</a>
       <a class="btn btn-outline btn-lg" href="tel:+19055009443" style="border-color:rgba(35,35,35,.25)">Call (905) 500-9443</a>
